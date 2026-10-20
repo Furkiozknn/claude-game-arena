@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Claude Game Arena</title>
-<meta name="description" content="Four free browser games, each built by a different Claude model from one prompt. Play them and see the scorecard.">
+<meta name="description" content="Eight free browser games by four Claude models: round 1 in Three.js, round 2 remade in Godot 4. Play them and see the scorecards.">
 <meta property="og:title" content="Claude Game Arena">
-<meta property="og:description" content="Four free browser games, each built by a different Claude model from one prompt: Opus 5.5, Sonnet 5.5, Fable 5.1, Haiku 5.5.">
+<meta property="og:description" content="Eight free browser games by Opus 5.5, Sonnet 5.5, Fable 5.1 and Haiku 5.5: round 1 in Three.js, round 2 remade in Godot 4.">
 <meta property="og:image" content="https://furkiozknn.github.io/claude-game-arena/media/cover.png">
 <meta property="og:url" content="https://furkiozknn.github.io/claude-game-arena/">
 <meta name="twitter:card" content="summary_large_image">
@@ -87,19 +87,19 @@
       <div class="brand">🏟️ CLAUDE GAME ARENA</div>
       <button class="lang" id="lang">Türkçe</button>
     </div>
-    <h1 data-en>Four games, <span>four AI models</span>, one prompt each.</h1>
-    <h1 data-tr>Dört oyun, <span>dört yapay zekâ modeli</span>, her birine tek prompt.</h1>
-    <p class="lead" data-en>Each game was built on its own by a different Claude model from a single prompt, then tested and published. Every game is one HTML file, free to play in your browser on desktop and mobile.</p>
-    <p class="lead" data-tr>Her oyunu farklı bir Claude modeli tek bir prompttan kendi başına yaptı; sonra test edilip yayınlandı. Her oyun tek bir HTML dosyası, bilgisayarda ve telefonda tarayıcıdan ücretsiz oynanıyor.</p>
+    <h1 data-en>Four AI models, <span>two rounds</span>, eight games.</h1>
+    <h1 data-tr>Dört yapay zekâ modeli, <span>iki tur</span>, sekiz oyun.</h1>
+    <p class="lead" data-en>Each game was built on its own by a different Claude model from a single prompt, then tested and published. In round 1 every game is one HTML file; in round 2 each model remade its own game in Godot 4. All free to play in your browser on desktop and mobile.</p>
+    <p class="lead" data-tr>Her oyunu farklı bir Claude modeli tek bir prompttan kendi başına yaptı; sonra test edilip yayınlandı. 1. turda her oyun tek bir HTML dosyası; 2. turda her model kendi oyununu Godot 4 ile yeniden yaptı. Hepsi bilgisayarda ve telefonda tarayıcıdan ücretsiz oynanıyor.</p>
     <div class="pills">
       <span class="pill">Three.js</span><span class="pill" data-en>No install</span><span class="pill" data-tr>Kurulum yok</span>
-      <span class="pill">Türkçe · English</span><span class="pill" data-en>Round 1</span><span class="pill" data-tr>1. tur</span>
+      <span class="pill">Godot 4</span><span class="pill">Türkçe · English</span><span class="pill" data-en>2 rounds</span><span class="pill" data-tr>2 tur</span>
     </div>
   </header>
 
   <h2 data-en>Play the games</h2><h2 data-tr>Oyunları oyna</h2>
-  <p class="sub" data-en>Clips are recorded from each game's own self-test bot.</p>
-  <p class="sub" data-tr>Videolar her oyunun kendi test botu oynarken kaydedildi.</p>
+  <p class="sub" data-en>Round 1: browser games in Three.js. Clips are recorded from each game's own self-test bot.</p>
+  <p class="sub" data-tr>1. tur: Three.js ile tarayıcı oyunları. Videolar her oyunun kendi test botu oynarken kaydedildi.</p>
   <div class="grid">
     <article class="card">
       <video src="media/hisar.mp4" poster="media/hisar-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
@@ -160,6 +160,68 @@
     <div class="note" style="--c: var(--haiku)"><b>Haiku 5.5 · 30/50</b><span data-en>The fastest and cheapest model built every mechanic in the brief, but the art is the weakest. Three visual issues fixed in one review round.</span><span data-tr>En hızlı ve en ucuz model, briftaki tüm mekanikleri kurdu ama görseller en zayıf. Üç görsel sorun tek inceleme turunda düzeltildi.</span></div>
   </div>
 
+  <h2 data-en>Round 2: Godot 4 remakes</h2><h2 data-tr>2. tur: Godot 4 ile yeniden yapımlar</h2>
+  <p class="sub" data-en>Each model remade its own round-1 game in Godot 4 from one shared brief: same rules, a real engine, menus, settings, saves and tests. The web builds are exported on GitHub's servers.</p>
+  <p class="sub" data-tr>Her model kendi 1. tur oyununu ortak bir brifle Godot 4'te yeniden yaptı: aynı kurallar, gerçek bir oyun motoru, menüler, ayarlar, kayıt ve testler. Web sürümleri GitHub'ın sunucularında üretiliyor.</p>
+  <div class="grid">
+    <article class="card">
+      <video src="media/r2-hisar.mp4" poster="media/r2-hisar-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="cbody">
+        <div class="ctitle"><h3>🏰 Hisar</h3><span class="model m-opus">Opus 5.5</span></div>
+        <div class="genre" data-en>Tower defense · Godot 4</div><div class="genre" data-tr>Kule savunması · Godot 4</div>
+        <p data-en>A sea shader, a fortress with banners, a portrait camera that turns the map, a glass UI, a save with Continue and 276 unit tests.</p>
+        <p data-tr>Deniz shader'ı, sancaklı hisar, dikey ekranda dönen harita, cam görünümlü arayüz, "Devam et" ile kayıt ve 276 birim testi.</p>
+        <div class="actions"><a class="btn play" href="https://furkiozknn.github.io/hisar-godot/"><span data-en>▶ Play</span><span data-tr>▶ Oyna</span></a><a class="btn" href="https://github.com/Furkiozknn/hisar-godot"><span data-en>Code</span><span data-tr>Kod</span></a></div>
+      </div>
+    </article>
+    <article class="card">
+      <video src="media/r2-cay-ocagi.mp4" poster="media/r2-cay-ocagi-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="cbody">
+        <div class="ctitle"><h3>🍵 Çay Ocağı</h3><span class="model m-sonnet">Sonnet 5.5</span></div>
+        <div class="genre" data-en>Time management · Godot 4</div><div class="genre" data-tr>İşletme · Godot 4</div>
+        <p data-en>Steam, sparks and a shader sea, a self-playing demo day behind the title, animated star summaries, 386 unit tests and a UI click test.</p>
+        <p data-tr>Buhar, kıvılcım ve shader deniz, başlığın arkasında kendi oynayan bir gün, animasyonlu yıldız özetleri, 386 birim testi ve arayüz tıklama testi.</p>
+        <div class="actions"><a class="btn play" href="https://furkiozknn.github.io/cay-ocagi-godot/"><span data-en>▶ Play</span><span data-tr>▶ Oyna</span></a><a class="btn" href="https://github.com/Furkiozknn/cay-ocagi-godot"><span data-en>Code</span><span data-tr>Kod</span></a></div>
+      </div>
+    </article>
+    <article class="card">
+      <video src="media/r2-cini-ustasi.mp4" poster="media/r2-cini-ustasi-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="cbody">
+        <div class="ctitle"><h3>🎨 Çini Ustası</h3><span class="model m-fable">Fable 5.1</span></div>
+        <div class="genre" data-en>Puzzle · Godot 4</div><div class="genre" data-tr>Bulmaca · Godot 4</div>
+        <p data-en>A warm 3D workshop with code-drawn Iznik motifs, a kiln sequence with sparks and camera pans, a collection wall and a solver-driven bot.</p>
+        <p data-tr>Kodla çizilmiş İznik motifleriyle sıcak bir 3D atölye, kıvılcımlı ve kamera hareketli fırın sahnesi, koleksiyon duvarı ve çözücüyle oynayan bot.</p>
+        <div class="actions"><a class="btn play" href="https://furkiozknn.github.io/cini-ustasi-godot/"><span data-en>▶ Play</span><span data-tr>▶ Oyna</span></a><a class="btn" href="https://github.com/Furkiozknn/cini-ustasi-godot"><span data-en>Code</span><span data-tr>Kod</span></a></div>
+      </div>
+    </article>
+    <article class="card">
+      <video src="media/r2-marti.mp4" poster="media/r2-marti-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="cbody">
+        <div class="ctitle"><h3>🕊️ Martı</h3><span class="model m-haiku">Haiku 5.5</span></div>
+        <div class="genre" data-en>Arcade flyer · Godot 4</div><div class="genre" data-tr>Arcade uçuş · Godot 4</div>
+        <p data-en>A shader strait with sun glints, a sky that moves from afternoon through sunset to night, puffy storm clouds and code-drawn HUD icons.</p>
+        <p data-tr>Güneş parıltılı shader boğaz, öğleden gün batımına ve geceye geçen gökyüzü, kabarık fırtına bulutları ve kodla çizilmiş arayüz simgeleri.</p>
+        <div class="actions"><a class="btn play" href="https://furkiozknn.github.io/marti-godot/"><span data-en>▶ Play</span><span data-tr>▶ Oyna</span></a><a class="btn" href="https://github.com/Furkiozknn/marti-godot"><span data-en>Code</span><span data-tr>Kod</span></a></div>
+      </div>
+    </article>
+  </div>
+
+  <h2 data-en>Round 2 scorecard</h2><h2 data-tr>2. tur puan tablosu</h2>
+  <p class="sub" data-en>Same reviewer and categories. "First-pass robustness" counts what the independent review had to send back.</p>
+  <p class="sub" data-tr>Aynı değerlendirici, aynı başlıklar. "İlk denemede sağlamlık" bağımsız incelemenin geri göndermek zorunda kaldıklarını ölçer.</p>
+  <div class="tablewrap">
+    <table id="scores2">
+      <thead><tr><th data-en>Category</th><th data-tr>Başlık</th><th>Hisar · Opus 5.5</th><th>Çay Ocağı · Sonnet 5.5</th><th>Çini Ustası · Fable 5.1</th><th>Martı · Haiku 5.5</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="notes">
+    <div class="note" style="--c: var(--sonnet)"><b>Sonnet 5.5 · 46/50</b><span data-en>Won again: 386 unit tests plus a UI smoke test, a bot that clears every day, and nothing for review to send back.</span><span data-tr>Yine birinci: 386 birim testi ve arayüz testi, her günü bitiren bir bot, incelemede geri gönderilecek hiçbir şey yok.</span></div>
+    <div class="note" style="--c: var(--opus)"><b>Opus 5.5 · 43/50</b><span data-en>The biggest visual jump from round 1, with no review fixes. Its bot reaches the last wave but cannot hold it.</span><span data-tr>1. tura göre en büyük görsel sıçrama, inceleme düzeltmesi gerekmedi. Botu son dalgaya ulaşıyor ama dayanamıyor.</span></div>
+    <div class="note" style="--c: var(--fable)"><b>Fable 5.1 · 39/50</b><span data-en>Again the best-looking game, but its first web build ran at 6-10 fps and lacked a glyph. Fixed in one round, now 61 fps.</span><span data-tr>Yine en güzel görünen oyun, ama ilk web sürümü 6-10 fps çalıştı ve bir karakter eksikti. Tek turda düzeltildi, şimdi 61 fps.</span></div>
+    <div class="note" style="--c: var(--haiku)"><b>Haiku 5.5 · 31/50</b><span data-en>Every mechanic built fast, but the first look was overexposed with a stick-figure gull. Seven issues fixed in one round.</span><span data-tr>Tüm mekanikler hızlıca kuruldu ama ilk görünüm aşırı parlak, martı çöp adam gibiydi. Yedi sorun tek turda düzeltildi.</span></div>
+  </div>
+
   <h2 data-en>How the arena works</h2><h2 data-tr>Arena nasıl işliyor</h2>
   <ol class="steps" data-en>
     <li><b>One prompt per game</b> in the same structure: World, Life, Game rules, Interaction, HUD, Extras, Performance (60 fps on a laptop iGPU) and Self-test.</li>
@@ -175,34 +237,34 @@
   </ol>
 
   <footer>
-    <span data-en>Next: the best round-1 games will be rebuilt in Godot 4. Made with Claude Code. Code under the MIT license.</span>
-    <span data-tr>Sırada: 1. turun en iyi oyunları Godot 4 ile yeniden yapılacak. Claude Code ile yapıldı. Kod MIT lisanslı.</span>
+    <span data-en>Next: other models get their turn in a later round. Made with Claude Code. Code under the MIT license.</span>
+    <span data-tr>Sırada: diğer modeller sonraki bir turda sıra alacak. Claude Code ile yapıldı. Kod MIT lisanslı.</span>
     · <a href="https://github.com/Furkiozknn/claude-game-arena">GitHub</a>
   </footer>
 </div>
 <script>
-  const SCORES = [
-    ['Visuals', 'Görsel', [8, 9, 9, 5]],
-    ['Gameplay depth', 'Oynanış derinliği', [8, 9, 8, 7]],
-    ['Polish and UX', 'Cila ve kullanım', [8, 8, 9, 6]],
-    ['First-pass robustness', 'İlk denemede sağlamlık', [7, 10, 8, 6]],
-    ['Self-testing rigour', 'Kendi kendini test', [7, 10, 9, 6]],
-  ];
   const COLORS = ['var(--opus)', 'var(--sonnet)', 'var(--fable)', 'var(--haiku)'];
-  const tbody = document.querySelector('#scores tbody');
-  const totals = [0, 0, 0, 0];
-  for (const [en, tr, vals] of SCORES) {
-    const tr_ = document.createElement('tr');
-    tr_.innerHTML = `<td><span data-en>${en}</span><span data-tr>${tr}</span></td>` + vals.map((v, i) => {
-      totals[i] += v;
-      return `<td class="n"><div class="barcell"><b>${v}</b><div class="bar"><i style="width:${v * 10}%;background:${COLORS[i]}"></i></div></div></td>`;
-    }).join('');
-    tbody.appendChild(tr_);
-  }
-  const tot = document.createElement('tr');
-  tot.className = 'total';
-  tot.innerHTML = `<td><span data-en>Total (of 50)</span><span data-tr>Toplam (50 üzerinden)</span></td>` + totals.map(v => `<td>${v}</td>`).join('');
-  tbody.appendChild(tot);
+  const CATS = [['Visuals', 'Görsel'], ['Gameplay depth', 'Oynanış derinliği'], ['Polish and UX', 'Cila ve kullanım'],
+    ['First-pass robustness', 'İlk denemede sağlamlık'], ['Self-testing rigour', 'Kendi kendini test']];
+  const fillScores = (id, rows) => {
+    const tbody = document.querySelector(`#${id} tbody`);
+    const totals = [0, 0, 0, 0];
+    rows.forEach((vals, r) => {
+      const [en, tr] = CATS[r];
+      const tr_ = document.createElement('tr');
+      tr_.innerHTML = `<td><span data-en>${en}</span><span data-tr>${tr}</span></td>` + vals.map((v, i) => {
+        totals[i] += v;
+        return `<td class="n"><div class="barcell"><b>${v}</b><div class="bar"><i style="width:${v * 10}%;background:${COLORS[i]}"></i></div></div></td>`;
+      }).join('');
+      tbody.appendChild(tr_);
+    });
+    const tot = document.createElement('tr');
+    tot.className = 'total';
+    tot.innerHTML = `<td><span data-en>Total (of 50)</span><span data-tr>Toplam (50 üzerinden)</span></td>` + totals.map(v => `<td>${v}</td>`).join('');
+    tbody.appendChild(tot);
+  };
+  fillScores('scores', [[8, 9, 9, 5], [8, 9, 8, 7], [8, 8, 9, 6], [7, 10, 8, 6], [7, 10, 9, 6]]);
+  fillScores('scores2', [[9, 8, 9, 6], [8, 9, 8, 7], [9, 9, 9, 6], [8, 10, 6, 5], [9, 10, 7, 7]]);
 
   const btn = document.getElementById('lang');
   const setLang = l => { document.documentElement.lang = l; btn.textContent = l === 'tr' ? 'English' : 'Türkçe'; try { localStorage.setItem('arena.lang', l); } catch (e) {} };
