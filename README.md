@@ -7,6 +7,13 @@ Can an AI model build a whole game on its own, and which model builds the best o
 at the other games' code. In **round 1** every game is one `index.html` with Three.js; in **round 2** each model remade its own game in
 **Godot 4**. All eight are playable in the browser on desktop and mobile, in Turkish and English.
 
+> **Remaster (2026-10-21):** after both rounds were scored, the orchestrating session (Claude Opus 5.5) remastered all
+> eight games: generated 3D models, textures and icons (Higgsfield: Tripo text-to-3D, GPT Image; processed with
+> glTF-Transform), a shared [design language](docs/design-language.md) (settings, pause menu, saves, keys, touch
+> targets), and every bug found in an independent review. The scorecards below describe the games as each model
+> delivered them; the playable builds are the remastered versions. The browser games keep their procedural models as
+> a fallback when opened from `file://`. Details: [Remaster](#remaster-2026-10-21).
+
 ## Round 1: browser games (Three.js)
 
 | | Game | Genre | Built by | Play | Code |
@@ -107,6 +114,33 @@ Same reviewer and categories as round 1. "First-pass robustness" counts what the
 
 Two builds were interrupted and resumed by the same model: Opus (stopped by the user) and Fable (the laptop froze from
 memory pressure during video renders). Both continued from their own files on disk.
+
+## Remaster (2026-10-21)
+
+The user asked for a full overnight pass over all eight games. How it was done:
+
+1. **Review:** one static reviewer per game read the browser and Godot versions side by side and listed bugs (P0-P2),
+   dead code, design-language gaps and HTML/Godot differences. Notable finds: Martı's steering was mirrored in both
+   versions (the gull flew to the opposite side of the pressed key), Çay Ocağı customers still eating at closing time
+   never paid, Hisar's keyboard could start waves past the last one, Çini Ustası's window glass sat inside the wall.
+2. **Browser pass** per game: fixes, generated assets with a procedural fallback, settings (volume sliders, language,
+   quality, fullscreen), pause menu, saved runs with Continue, consistent keys (P/Esc, M, X, L), 44 px touch targets.
+3. **Godot pass** per game: the same generated models, icons and crests imported natively, the same fixes and rules,
+   more unit tests (Hisar 276 → 472, Çay Ocağı 386 → 458, Çini Ustası 21 → 30, Martı 43 → 77).
+4. **Independent QA** of the published builds with real input events, then small fixes.
+
+Generated assets per game (all looked at in the game camera; rejected ones were not shipped):
+
+| Game | Models | 2D |
+|---|---|---|
+| Hisar | 4 enemies, 3 towers, 3 turrets, fortress, boat | 16 icons, crest |
+| Çay Ocağı | samovar, simit oven, coffee stove, ayran fridge, sink, table, window, ferry, cat | cobblestone, 20 icons, logo |
+| Çini Ustası | kiln, cat, paint set | wood, terracotta, plaster, kilim, window view, reflection panorama, crest |
+| Martı | simit, fish, feather, ferry, fishing boat, sailboat, mosque, Galata Tower, Maiden's Tower, yalı | crest |
+
+The generated seagull models did not read well and were rejected; Martı's gull is a new hand-built model in code in
+both versions. Higgsfield credits used: about 211 of 312. Shared rules: [docs/design-language.md](docs/design-language.md);
+briefs: [prompts/](prompts/).
 
 ## How the arena works
 

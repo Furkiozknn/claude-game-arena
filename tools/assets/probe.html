@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>probe</title>
+<style>html, body { margin: 0; height: 100%; } iframe { border: 0; width: 100%; height: 100%; } pre { position: fixed; left: 0; bottom: 0; margin: 0; background: #fff; font: 12px monospace; }</style>
+</head>
+<body>
+<!-- Usage: probe.html?wait=ms&w=px&src=<game url> : loads a game in an iframe, then prints window.hisar state + errors as JSON
+     into <pre id="out"> (read it with chrome --dump-dom, or from chrome_debug.log with --enable-logging). -->
+<iframe id="f"></iframe>
+<pre id="out">pending</pre>
+<script>
+const q = new URLSearchParams(location.search);
+const f = document.getElementById('f');
+if (q.get('w')) f.style.width = q.get('w') + 'px';
+const errs = [];
+f.addEventListener('load', () => {
+  const w = f.contentWindow;
+  w.addEventListener('error', e => errs.push('error: ' + e.message));
+  w.addEventListener('unhandledrejection', e => errs.push('rejection: ' + (e.reason && e.reason.message || e.reason)));
+  const ce = w.console.error.bind(w.console), cw = w.console.warn.bind(w.console);
+  w.console.error = (...a) => { errs.push('console.error: ' + a.join(' ')); ce(...a); };
+  w.console.warn = (...a) => { errs.push('console.warn: ' + a.join(' ')); cw(...a); };
+});
+f.src = q.get('src');
+// fps: frames counted in the game's window over 3 s, starting at `wait` (only meaningful without virtual time)
+let fps = null;
+setTimeout(() => { const w = f.contentWindow; let n = 0; const t0 = performance.now(); const tick = () => { n++; if (performance.now() - t0 < 3000) w.requestAnimationFrame(tick); else fps = +(n * 1000 / (performance.now() - t0)).toFixed(1); }; w.requestAnimationFrame(tick); }, +(q.get('wait') || 8000) - 3500);
+setTimeout(() => {
+  const w = f.contentWindow, G = w.hisar || {};
+  const dbg = [...w.document.querySelectorAll('div')].map(d => d.textContent).find(s => s.startsWith('draw calls'));
+  const res = 'RESULT ' + JSON.stringify({
+    wave: G.wave, lives: G.lives, over: G.over, running: G.running, towers: G.towers && G.towers.map(t => t.type[0] + t.level).join(' '),
+    gameErrors: G.errors, errs, assets: G.assets, assetsReady: G.assetsReady, dbg, play: (w.document.getElementById('bPlay') || {}).textContent,
+    bWave: w.document.getElementById('bWave').textContent, fps,
+  });
+  document.getElementById('out').textContent = res;
+  console.log(res);
+}, +(q.get('wait') || 8000));
+</script>
+</body>
+</html>
